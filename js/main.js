@@ -25,53 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', onScroll, { passive: true });
 
   /* ─────────────────────────────────────────────
-     CUSTOM CURSOR
-  ───────────────────────────────────────────── */
-  const cursorDot     = document.getElementById('cursorDot');
-  const cursorOutline = document.getElementById('cursorOutline');
-
-  let mouseX = 0, mouseY = 0;
-  let outlineX = 0, outlineY = 0;
-
-  if (window.matchMedia('(pointer: fine)').matches) {
-    let cursorVisible = false;
-
-    window.addEventListener('mousemove', e => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      cursorDot.style.left = mouseX + 'px';
-      cursorDot.style.top  = mouseY + 'px';
-
-      if (!cursorVisible) {
-        cursorVisible = true;
-        cursorDot.style.opacity     = '1';
-        cursorOutline.style.opacity = '1';
-      }
-    });
-
-    // Outline con lag
-    (function animateOutline() {
-      outlineX += (mouseX - outlineX) * 0.12;
-      outlineY += (mouseY - outlineY) * 0.12;
-      cursorOutline.style.left = outlineX + 'px';
-      cursorOutline.style.top  = outlineY + 'px';
-      requestAnimationFrame(animateOutline);
-    })();
-
-    // Hover state
-    document.querySelectorAll('a, button, .product-card, .partner-card, .beneficio-item').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        cursorDot.classList.add('hovering');
-        cursorOutline.classList.add('hovering');
-      });
-      el.addEventListener('mouseleave', () => {
-        cursorDot.classList.remove('hovering');
-        cursorOutline.classList.remove('hovering');
-      });
-    });
-  }
-
-  /* ─────────────────────────────────────────────
      HAMBURGER – menú móvil
   ───────────────────────────────────────────── */
   const hamburger = document.getElementById('hamburger');
