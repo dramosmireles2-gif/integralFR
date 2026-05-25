@@ -34,11 +34,19 @@ document.addEventListener('DOMContentLoaded', () => {
   let outlineX = 0, outlineY = 0;
 
   if (window.matchMedia('(pointer: fine)').matches) {
+    let cursorVisible = false;
+
     window.addEventListener('mousemove', e => {
       mouseX = e.clientX;
       mouseY = e.clientY;
       cursorDot.style.left = mouseX + 'px';
       cursorDot.style.top  = mouseY + 'px';
+
+      if (!cursorVisible) {
+        cursorVisible = true;
+        cursorDot.style.opacity     = '1';
+        cursorOutline.style.opacity = '1';
+      }
     });
 
     // Outline con lag

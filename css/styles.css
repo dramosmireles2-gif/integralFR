@@ -1504,20 +1504,24 @@ ul { list-style: none; }
   pointer-events: none;
   z-index: 99999;
   transform: translate(-50%, -50%);
-  transition: transform .1s ease, background .2s ease, width .2s ease, height .2s ease;
+  opacity: 0;
+  transition: background .2s ease, width .2s ease, height .2s ease, opacity .3s ease;
+  will-change: left, top;
 }
 
 .cursor-outline {
   width: 36px;
   height: 36px;
-  border: 1.5px solid rgba(0,0,0,.3);
+  border: 1.5px solid rgba(0,0,0,.25);
   border-radius: 50%;
   position: fixed;
   top: 0; left: 0;
   pointer-events: none;
   z-index: 99998;
   transform: translate(-50%, -50%);
-  transition: transform .12s ease, width .2s ease, height .2s ease, border-color .2s ease;
+  opacity: 0;
+  transition: width .2s ease, height .2s ease, border-color .2s ease, opacity .3s ease;
+  will-change: left, top;
 }
 
 .cursor-dot.hovering {
