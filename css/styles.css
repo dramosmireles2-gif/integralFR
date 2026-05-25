@@ -1640,6 +1640,233 @@ ul { list-style: none; }
 }
 
 /* ═══════════════════════════════════════════════
+   SECCIÓN CONTACTO
+   ═══════════════════════════════════════════════ */
+.contacto {
+  background: var(--color-gray-50);
+}
+
+.contacto__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.contacto__title {
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--color-dark);
+  margin: 12px 0 16px;
+}
+
+.contacto__desc {
+  font-size: .9rem;
+  color: var(--color-gray-600);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.contacto__datos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.contacto__dato {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contacto__dato-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--color-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.contacto__dato-label {
+  display: block;
+  font-size: .75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  color: var(--color-gray-600);
+  margin-bottom: 2px;
+}
+
+.contacto__dato-value {
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  line-height: 1.5;
+}
+a.contacto__dato-value:hover { color: var(--color-blue); }
+
+.contacto__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-size: .82rem;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid #c8e6c9;
+}
+
+/* Formulario */
+.contacto__form-wrap {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-card);
+}
+
+.contacto__form-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  margin-bottom: 28px;
+}
+
+.contacto__form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-main);
+  font-size: .875rem;
+  color: var(--color-dark);
+  background: var(--color-white);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+  -webkit-appearance: none;
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder { color: var(--color-gray-400); }
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--color-dark);
+  box-shadow: 0 0 0 3px rgba(26,26,26,.08);
+}
+
+.form-field select { cursor: pointer; color: var(--color-gray-600); }
+.form-field select:has(option:not([disabled]):checked) { color: var(--color-dark); }
+.form-field textarea { resize: vertical; min-height: 100px; }
+
+.form-field--full { grid-column: 1 / -1; }
+
+/* Chips de producto */
+.form-chips-label {
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--color-gray-600);
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  margin-bottom: 10px;
+}
+
+.form-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.form-chip {
+  cursor: pointer;
+}
+.form-chip input[type="checkbox"] {
+  display: none;
+}
+.form-chip span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--color-gray-600);
+  background: var(--color-white);
+  transition: all var(--transition);
+  user-select: none;
+}
+.form-chip:hover span {
+  border-color: var(--color-dark);
+  color: var(--color-dark);
+}
+.form-chip input[type="checkbox"]:checked + span {
+  background: var(--color-dark);
+  border-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+/* Submit */
+.form-submit {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn--submit {
+  width: 100%;
+  justify-content: center;
+  padding: 14px 24px;
+  font-size: .95rem;
+}
+
+.form-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: .78rem;
+  color: var(--color-gray-600);
+}
+.form-trust i { color: #2e7d32; }
+
+/* Responsive contacto */
+@media (max-width: 900px) {
+  .contacto__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+@media (max-width: 640px) {
+  .contacto__form-wrap { padding: 24px 20px; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════
    SCROLL PROGRESS BAR
    ═══════════════════════════════════════════════ */
 .scroll-progress {
