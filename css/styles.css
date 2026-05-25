@@ -351,19 +351,19 @@ ul { list-style: none; }
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255,255,255,.22);
   border-radius: 999px;
-  padding: 10px 28px;
+  padding: 8px 16px;
   margin-bottom: 28px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .hero__product-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 22px;
+  padding: 6px 16px;
   color: var(--color-white);
   transition: opacity var(--transition);
-  /* Separador vertical entre items */
   border-right: 1px solid rgba(255,255,255,.25);
 }
 .hero__product-link:last-child { border-right: none; }
@@ -492,19 +492,27 @@ ul { list-style: none; }
   color: var(--color-dark);
 }
 
-.brand-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  font-size: 1rem;
+/* Imagen PNG del producto en la card (mismo archivo que el hero) */
+.product-card__brand-img {
+  margin-bottom: 16px;
 }
-.brand-icon--sense  { color: var(--color-accent); }
-.brand-icon--vision { color: #29b6f6; }
-.brand-icon--tire   { color: var(--color-gray-600); }
-.brand-icon--driver { color: #66bb6a; }
+.product-card__brand-img img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Fallback de texto mientras no hay PNG */
+.product-card__brand-fallback {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  margin-bottom: 0;
+}
 
 .product-card__subtitle {
   font-size: .85rem;
