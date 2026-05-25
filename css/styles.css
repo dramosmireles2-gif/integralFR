@@ -694,6 +694,152 @@ ul { list-style: none; }
 }
 
 /* ═══════════════════════════════════════════════
+   BLOQUE TECNOLOGÍA + VISITA
+   ═══════════════════════════════════════════════ */
+.tech-visita { background: var(--color-gray-50); }
+
+.tech-visita__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* Tarjeta tecnología */
+.tech-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  box-shadow: var(--shadow-card);
+}
+
+.tech-card__icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  background: var(--color-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--color-white);
+}
+
+.tech-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--color-dark);
+}
+
+.tech-card__desc {
+  font-size: .875rem;
+  color: var(--color-gray-600);
+  line-height: 1.65;
+}
+
+/* Tarjeta visita */
+.visita-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 160px;
+}
+
+.visita-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.visita-card__btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-size: .85rem;
+}
+
+@media (max-width: 768px) {
+  .tech-visita__inner { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════
+   BENEFICIOS
+   ═══════════════════════════════════════════════ */
+.beneficios {
+  background: var(--color-gray-100);
+  position: relative;
+  overflow: hidden;
+}
+
+.beneficios__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.beneficio-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.beneficio-item__icon {
+  width: 96px;
+  height: 96px;
+  background: var(--color-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--transition), background var(--transition);
+}
+.beneficio-item__icon svg {
+  width: 52px;
+  height: 52px;
+}
+.beneficio-item:hover .beneficio-item__icon {
+  transform: translateY(-4px);
+  background: #333;
+}
+
+.beneficio-item__title {
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  line-height: 1.3;
+}
+
+.beneficio-item__desc {
+  font-size: .8rem;
+  color: var(--color-gray-600);
+  line-height: 1.65;
+}
+
+@media (max-width: 1024px) {
+  .beneficios__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .beneficios__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 400px) {
+  .beneficios__grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════
    MISIÓN – Texto + Video circular
    ═══════════════════════════════════════════════ */
 .mision { background: var(--color-white); }
