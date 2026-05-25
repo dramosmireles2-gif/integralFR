@@ -660,7 +660,8 @@ ul { list-style: none; }
 
 @keyframes clientesScroll {
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  to   { transform: translateX(-1288px); }
+  /* 7 cards × (160px width + 24px margin-right) = 1288px exact loop point */
 }
 
 .clientes-slide {
@@ -673,7 +674,7 @@ ul { list-style: none; }
   border: 1px solid var(--color-gray-200);
   border-radius: var(--radius-md);
   height: 80px;
-  min-width: 140px;
+  width: 160px;
   margin-right: 24px;
   transition: border-color var(--transition), box-shadow var(--transition);
 }
@@ -1469,6 +1470,97 @@ ul { list-style: none; }
   .footer__brand { grid-column: auto; }
 
   .hero__arrow { display: none; }
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE – Hero
+   ═══════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .hero__content {
+    padding: 0 20px;
+    text-align: center;
+    align-items: center;
+  }
+  .hero__products {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .hero__product-link {
+    border-right: none;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero__eyebrow { font-size: .75rem; }
+  .hero__title   { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+  .hero__subtitle { font-size: .9rem; }
+  .hero__products {
+    padding: 10px 14px;
+    gap: 6px;
+  }
+  .hero__product-link img { height: 28px; }
+  .hero__ctas { flex-direction: column; align-items: center; gap: 12px; }
+  .hero__ctas .btn { width: 100%; max-width: 280px; text-align: center; }
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE – Smart Fleet / Products
+   ═══════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE – Partners
+   ═══════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .partners-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .partners-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE – Testimonial
+   ═══════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .testimonial__inner { padding: 0 16px; }
+  .testimonial__text  { font-size: clamp(1.1rem, 4vw, 1.5rem); }
+  .testimonial__author { flex-direction: column; text-align: center; }
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE – CTA Banner & Extra cards
+   ═══════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .cta-banner__title { font-size: clamp(1.4rem, 6vw, 2rem); }
+  .cta-banner__actions { flex-direction: column; align-items: center; gap: 12px; }
+  .cta-banner__actions .btn { width: 100%; max-width: 280px; text-align: center; }
+
+  .extra-card { flex-direction: column; }
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE – Section headers
+   ═══════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .section-header__title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+  .section { padding: 60px 0; }
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE – Clientes carousel
+   ═══════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .clientes-slide { width: 130px; height: 64px; padding: 12px 16px; margin-right: 16px; }
+  .clientes-slide img { max-height: 36px; max-width: 100px; }
+  /* 7 × (130+16) = 1015px */
+  @keyframes clientesScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-1015px); }
+  }
 }
 
 /* ═══════════════════════════════════════════════
