@@ -100,4 +100,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sections.forEach(s => sectionObserver.observe(s));
 
+
+  /* ─────────────────────────────────────────────
+     CONTADORES ANIMADOS – Stats section
+  ───────────────────────────────────────────── */
+  const statNumbers = document.querySelectorAll('.stat-item__number');
+
+  function formatNumber(n) {
+    if (n >= 1000000) return (n / 1000000).toLocaleString('es-MX', { maximumFractionDigits: 1 }) + ',000,000';
+    return n.toLocaleString('es-MX');
+  }
+
+  function animateCounter(el) {
+    const target   = parseInt(el.dataset.target, 10);
+    const prefix   = el.dataset.prefix  || '';
+    const suffix   = el.dataset.suffix  || '';
+    const duration = 1800;
+    const start    = performance.now();
+
+    el.classList.add('counted');
+
+    function step(now) {
+      const elapsed  = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // Easing ease-out
+      const eased    = 1 - Math.pow(1 - progress, 3);
+      const current  = Math.round(eased * target);
+
+      el.textContent = prefix + formatNumber(current) + suffix;
+
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = prefix + formatNumber(target) + suffix;
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const nums = entry.target.querySelectorAll('.stat-item__number');
+        nums.forEach((el, i) => {
+          setTimeout(() => animateCounter(el), i * 150);
+        });
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const statsSection = document.getElementById('stats');
+  if (statsSection) statsObserver.observe(statsSection);
+
 });

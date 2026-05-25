@@ -694,6 +694,111 @@ ul { list-style: none; }
 }
 
 /* ═══════════════════════════════════════════════
+   BANNER CTA
+   ═══════════════════════════════════════════════ */
+.cta-banner {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding-block: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.cta-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+}
+
+.cta-banner__content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  padding-inline: 24px;
+  color: var(--color-white);
+}
+
+.cta-banner__eyebrow {
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.75);
+  margin-bottom: 16px;
+}
+
+.cta-banner__title {
+  font-size: clamp(1.4rem, 3.2vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 32px;
+  text-shadow: 0 2px 16px rgba(0,0,0,.3);
+}
+
+/* ═══════════════════════════════════════════════
+   ESTADÍSTICAS – Contadores
+   ═══════════════════════════════════════════════ */
+.stats {
+  background: var(--color-white);
+  padding-block: 72px;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 16px;
+}
+
+.stat-item__number {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: var(--color-dark);
+  letter-spacing: -1px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  /* Estado inicial para animación de entrada */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+.stat-item__number.counted {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stat-item__label {
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--color-gray-600);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  line-height: 1.4;
+  max-width: 160px;
+}
+
+@media (max-width: 768px) {
+  .stats__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 400px) {
+  .stats__grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════
    FOOTER
    ═══════════════════════════════════════════════ */
 .footer {
