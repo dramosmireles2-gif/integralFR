@@ -49,66 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ─────────────────────────────────────────────
-     HERO SLIDER
-  ───────────────────────────────────────────── */
-  const slides    = document.querySelectorAll('.hero__slide');
-  const dotsWrap  = document.getElementById('heroDots');
-  let current     = 0;
-  let autoTimer   = null;
-
-  if (slides.length > 0) {
-
-    // Crear dots
-    slides.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.className = 'hero__dot' + (i === 0 ? ' active' : '');
-      dot.setAttribute('aria-label', `Slide ${i + 1}`);
-      dot.addEventListener('click', () => goTo(i));
-      dotsWrap.appendChild(dot);
-    });
-
-    const dots = dotsWrap.querySelectorAll('.hero__dot');
-
-    function goTo(index) {
-      slides[current].classList.remove('active');
-      dots[current].classList.remove('active');
-      current = (index + slides.length) % slides.length;
-      slides[current].classList.add('active');
-      dots[current].classList.add('active');
-    }
-
-    function next() { goTo(current + 1); }
-    function prev() { goTo(current - 1); }
-
-    function startAuto() {
-      stopAuto();
-      autoTimer = setInterval(next, 5000);
-    }
-    function stopAuto() {
-      clearInterval(autoTimer);
-    }
-
-    document.getElementById('heroNext').addEventListener('click', () => { next(); startAuto(); });
-    document.getElementById('heroPrev').addEventListener('click', () => { prev(); startAuto(); });
-
-    // Pausa al hover
-    const heroEl = document.querySelector('.hero');
-    heroEl.addEventListener('mouseenter', stopAuto);
-    heroEl.addEventListener('mouseleave', startAuto);
-
-    // Swipe táctil
-    let touchStartX = 0;
-    heroEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-    heroEl.addEventListener('touchend', e => {
-      const delta = touchStartX - e.changedTouches[0].clientX;
-      if (Math.abs(delta) > 50) { delta > 0 ? next() : prev(); startAuto(); }
-    });
-
-    startAuto();
-  }
-
-
-  /* ─────────────────────────────────────────────
      REVEAL ON SCROLL – Intersection Observer
   ───────────────────────────────────────────── */
   const revealEls = document.querySelectorAll('.reveal');
