@@ -31,7 +31,10 @@
   --topbar-height: 36px;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
 body {
   font-family: var(--font-main);
@@ -39,6 +42,7 @@ body {
   background: var(--color-white);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 img { display: block; max-width: 100%; }
@@ -346,10 +350,10 @@ ul { list-style: none; }
   gap: 0;
   justify-content: center;
   align-items: center;
-  background: rgba(255,255,255,.28);
+  background: rgba(255,255,255,.62);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,.45);
+  border: 1px solid rgba(255,255,255,.80);
   border-radius: 999px;
   padding: 6px 8px;
   margin-bottom: 28px;
@@ -1473,6 +1477,63 @@ ul { list-style: none; }
 }
 
 /* ═══════════════════════════════════════════════
+   WHATSAPP FLOATING BUTTON
+   ═══════════════════════════════════════════════ */
+.whatsapp-float {
+  position: fixed;
+  bottom: 88px;
+  left: 24px;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(37,211,102,.45);
+  z-index: 9000;
+  transition: transform var(--transition), box-shadow var(--transition);
+  animation: waPulse 2.8s ease-in-out infinite;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37,211,102,.6);
+  animation: none;
+}
+@keyframes waPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,.45); }
+  50%       { box-shadow: 0 4px 32px rgba(37,211,102,.75), 0 0 0 8px rgba(37,211,102,.12); }
+}
+
+.whatsapp-float__tooltip {
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1a1a1a;
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 6px 12px;
+  border-radius: 8px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.whatsapp-float__tooltip::before {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-right-color: #1a1a1a;
+}
+.whatsapp-float:hover .whatsapp-float__tooltip { opacity: 1; }
+
+/* ═══════════════════════════════════════════════
    RESPONSIVE – Hero
    ═══════════════════════════════════════════════ */
 @media (max-width: 900px) {
@@ -1480,16 +1541,24 @@ ul { list-style: none; }
     padding: 0 20px;
     text-align: center;
     align-items: center;
+    width: 100%;
   }
   .hero__products {
     justify-content: center;
     flex-wrap: wrap;
-    gap: 8px;
+    white-space: normal;
+    gap: 4px;
+    max-width: 100%;
+    border-radius: 20px;
   }
   .hero__product-link {
     border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,.2);
     padding: 8px 12px;
+    flex: 1 1 40%;
+    justify-content: center;
   }
+  .hero__product-link:nth-child(n+3) { border-bottom: none; }
 }
 
 @media (max-width: 640px) {
