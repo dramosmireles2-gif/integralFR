@@ -694,6 +694,111 @@ ul { list-style: none; }
 }
 
 /* ═══════════════════════════════════════════════
+   MISIÓN – Texto + Video circular
+   ═══════════════════════════════════════════════ */
+.mision { background: var(--color-white); }
+
+.mision__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.mision__title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-top: 12px;
+  margin-bottom: 24px;
+  color: var(--color-dark);
+}
+
+.mision__subtitle {
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 12px;
+}
+
+.mision__desc {
+  font-size: .9rem;
+  color: var(--color-gray-700);
+  line-height: 1.75;
+  max-width: 480px;
+  margin-bottom: 36px;
+}
+
+/* WhatsApp CTA */
+.mision__whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.mision__whatsapp-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mision__whatsapp-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mision__whatsapp-label {
+  font-size: .82rem;
+  color: #25D366;
+  font-weight: 500;
+}
+
+.mision__whatsapp-number {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #25D366;
+  letter-spacing: -.5px;
+}
+
+/* Video circular */
+.mision__media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mision__video-circle {
+  width: clamp(300px, 40vw, 480px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 12px 48px rgba(0,0,0,.15);
+  position: relative;
+}
+
+.mision__video-circle video,
+.mision__video-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .mision__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .mision__media { order: -1; }
+  .mision__video-circle {
+    width: clamp(240px, 70vw, 380px);
+  }
+}
+
+/* ═══════════════════════════════════════════════
    BANNER CTA
    ═══════════════════════════════════════════════ */
 .cta-banner {
