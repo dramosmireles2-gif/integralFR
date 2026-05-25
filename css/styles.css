@@ -648,7 +648,7 @@ ul { list-style: none; }
 .clientes-track {
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 0;
   width: max-content;
   animation: clientesScroll 28s linear infinite;
 }
@@ -674,6 +674,7 @@ ul { list-style: none; }
   border-radius: var(--radius-md);
   height: 80px;
   min-width: 140px;
+  margin-right: 24px;
   transition: border-color var(--transition), box-shadow var(--transition);
 }
 
@@ -769,6 +770,12 @@ ul { list-style: none; }
   transform: translate(-50%, -50%);
   white-space: nowrap;
   font-size: .85rem;
+  /* Cancelar el hover lift global para que no salga del contenedor */
+  pointer-events: auto;
+}
+.visita-card__btn:hover {
+  transform: translate(-50%, -50%) !important;
+  background: var(--color-white);
 }
 
 @media (max-width: 768px) {
