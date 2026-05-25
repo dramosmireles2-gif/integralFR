@@ -1467,9 +1467,6 @@ ul { list-style: none; }
   .top-bar { display: none; }
   :root { --topbar-height: 0px; }
 
-  .products-grid { grid-template-columns: 1fr; }
-  .partners-grid { grid-template-columns: 1fr; }
-
   .footer__inner { grid-template-columns: 1fr; }
   .footer__brand { grid-column: auto; }
 
@@ -1481,7 +1478,7 @@ ul { list-style: none; }
    ═══════════════════════════════════════════════ */
 .whatsapp-float {
   position: fixed;
-  bottom: 88px;
+  bottom: 28px;
   left: 24px;
   width: 56px;
   height: 56px;
@@ -1580,6 +1577,11 @@ ul { list-style: none; }
 @media (max-width: 1024px) {
   .products-grid { grid-template-columns: repeat(2, 1fr); }
 }
+@media (max-width: 480px) {
+  .products-grid { grid-template-columns: 1fr; }
+  .product-card  { padding: 24px 20px; }
+  .product-card .btn { width: 100%; justify-content: center; }
+}
 
 /* ═══════════════════════════════════════════════
    RESPONSIVE – Partners
@@ -1589,6 +1591,11 @@ ul { list-style: none; }
 }
 @media (max-width: 640px) {
   .partners-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .partners-grid { grid-template-columns: 1fr; }
+  .partner-card  { padding: 24px 20px; }
+  .partner-card .btn { width: 100%; justify-content: center; }
 }
 
 /* ═══════════════════════════════════════════════
