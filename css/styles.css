@@ -123,6 +123,7 @@ ul { list-style: none; }
   align-items: center;
   gap: 4px;
   color: var(--color-gray-400);
+  font-weight: 600;
   transition: color var(--transition);
 }
 .top-bar__social a:hover,
@@ -161,7 +162,7 @@ ul { list-style: none; }
 }
 
 .navbar__logo img {
-  height: 52px;
+  height: 64px;
   width: auto;
 }
 
@@ -204,7 +205,7 @@ ul { list-style: none; }
   padding: 8px 12px;
   border-radius: var(--radius-sm);
   font-size: .875rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--color-gray-700);
   white-space: nowrap;
   transition: color var(--transition), background var(--transition);
