@@ -1486,54 +1486,6 @@ ul { list-style: none; }
   border-radius: 0 2px 2px 0;
 }
 
-/* ═══════════════════════════════════════════════
-   CUSTOM CURSOR
-   ═══════════════════════════════════════════════ */
-@media (pointer: fine) {
-  body { cursor: none; }
-  a, button { cursor: none; }
-}
-
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--color-dark);
-  border-radius: 50%;
-  position: fixed;
-  top: 0; left: 0;
-  pointer-events: none;
-  z-index: 99999;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: background .2s ease, width .2s ease, height .2s ease, opacity .3s ease;
-  will-change: left, top;
-}
-
-.cursor-outline {
-  width: 36px;
-  height: 36px;
-  border: 1.5px solid rgba(0,0,0,.25);
-  border-radius: 50%;
-  position: fixed;
-  top: 0; left: 0;
-  pointer-events: none;
-  z-index: 99998;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: width .2s ease, height .2s ease, border-color .2s ease, opacity .3s ease;
-  will-change: left, top;
-}
-
-.cursor-dot.hovering {
-  width: 12px;
-  height: 12px;
-  background: #1a56db;
-}
-.cursor-outline.hovering {
-  width: 48px;
-  height: 48px;
-  border-color: rgba(26,86,219,.4);
-}
 
 /* ═══════════════════════════════════════════════
    NAVBAR ENTRANCE ANIMATION
