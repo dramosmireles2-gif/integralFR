@@ -1982,7 +1982,7 @@ a.contacto__dato-value:hover { color: var(--color-blue); }
 .product-card:nth-child(1):hover { border-top-color: #e8a020; }  /* Sense – naranja */
 .product-card:nth-child(2):hover { border-top-color: #29b6f6; }  /* Vision – azul */
 .product-card:nth-child(3):hover { border-top-color: #78909c; }  /* Tires – gris */
-.product-card:nth-child(4):hover { border-top-color: #66bb6a; }  /* Driver – verde */
+.product-card:nth-child(4):hover { border-top-color: #ef5350; }  /* Driver – rojo */
 
 /* ═══════════════════════════════════════════════
    TESTIMONIAL
