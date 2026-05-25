@@ -343,23 +343,27 @@
     </div>
 
     <div class="clientes-track-wrap">
-      <div class="clientes-track" id="clientesTrack">
-        <!-- Los logos se duplican para efecto infinito -->
-        <div class="clientes-slide"><img src="IFR/clientes/6.png"  alt="Cliente 1" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/7.png"  alt="Cliente 2" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/8.png"  alt="Cliente 3" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/9.png"  alt="Cliente 4" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/10.png" alt="Cliente 5" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/11.png" alt="Cliente 6" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/12.png" alt="Cliente 7" /></div>
-        <!-- Duplicado para loop infinito -->
-        <div class="clientes-slide"><img src="IFR/clientes/6.png"  alt="Cliente 1" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/7.png"  alt="Cliente 2" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/8.png"  alt="Cliente 3" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/9.png"  alt="Cliente 4" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/10.png" alt="Cliente 5" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/11.png" alt="Cliente 6" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/12.png" alt="Cliente 7" /></div>
+      <!-- .clientes-ticker contiene exactamente 2 sets idénticos.
+           translateX(-50%) = exactamente un set, loop matemáticamente perfecto. -->
+      <div class="clientes-ticker">
+        <div class="clientes-set">
+          <div class="clientes-slide"><img src="IFR/clientes/6.png"  alt="Homexma" /></div>
+          <div class="clientes-slide"><img src="IFR/clientes/7.png"  alt="CEMEX" /></div>
+          <div class="clientes-slide"><img src="IFR/clientes/8.png"  alt="CONKMEX" /></div>
+          <div class="clientes-slide"><img src="IFR/clientes/9.png"  alt="Arca Continental" /></div>
+          <div class="clientes-slide"><img src="IFR/clientes/10.png" alt="Va-y-Ven" /></div>
+          <div class="clientes-slide"><img src="IFR/clientes/11.png" alt="GAMI" /></div>
+          <div class="clientes-slide"><img src="IFR/clientes/12.png" alt="Coca-Cola FEMSA" /></div>
+        </div>
+        <div class="clientes-set" aria-hidden="true">
+          <div class="clientes-slide"><img src="IFR/clientes/6.png"  alt="" /></div>
+          <div class="clientes-slide"><img src="IFR/clientes/7.png"  alt="" /></div>
+          <div class="clientes-slide"><img src="IFR/clientes/8.png"  alt="" /></div>
+          <div class="clientes-slide"><img src="IFR/clientes/9.png"  alt="" /></div>
+          <div class="clientes-slide"><img src="IFR/clientes/10.png" alt="" /></div>
+          <div class="clientes-slide"><img src="IFR/clientes/11.png" alt="" /></div>
+          <div class="clientes-slide"><img src="IFR/clientes/12.png" alt="" /></div>
+        </div>
       </div>
     </div>
   </section>

@@ -649,23 +649,27 @@ ul { list-style: none; }
   );
 }
 
-.clientes-track {
+.clientes-ticker {
   display: flex;
-  align-items: center;
-  gap: 0;
-  width: max-content;
   animation: clientesScroll 28s linear infinite;
 }
 
 /* Pausa al pasar el mouse */
-.clientes-track-wrap:hover .clientes-track {
+.clientes-track-wrap:hover .clientes-ticker {
   animation-play-state: paused;
+}
+
+/* Cada set es un flex row con las 7 cards.
+   El ticker contiene exactamente 2 sets, por lo que -50% = un set exacto. */
+.clientes-set {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 @keyframes clientesScroll {
   from { transform: translateX(0); }
-  to   { transform: translateX(-1288px); }
-  /* 7 cards × (160px width + 24px margin-right) = 1288px exact loop point */
+  to   { transform: translateX(-50%); }
 }
 
 .clientes-slide {
@@ -1632,11 +1636,7 @@ ul { list-style: none; }
 @media (max-width: 640px) {
   .clientes-slide { width: 130px; height: 64px; padding: 12px 16px; margin-right: 16px; }
   .clientes-slide img { max-height: 36px; max-width: 100px; }
-  /* 7 × (130+16) = 1015px */
-  @keyframes clientesScroll {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-1015px); }
-  }
+  /* -50% sigue siendo correcto: el ticker siempre tiene exactamente 2 sets */
 }
 
 /* ═══════════════════════════════════════════════
