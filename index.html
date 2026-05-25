@@ -11,6 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <div class="cursor-dot" id="cursorDot"></div><div class="cursor-outline" id="cursorOutline"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
 
   <!-- ═══════════════════════════════════════════
        TOP BAR – redes sociales + contacto
@@ -113,6 +115,35 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
+       ESTADÍSTICAS – Contadores animados
+  ════════════════════════════════════════════ -->
+  <section class="stats" id="stats">
+    <div class="container stats__grid">
+
+      <div class="stat-item">
+        <span class="stat-item__number" data-target="70560" data-prefix="+" data-suffix="">0</span>
+        <span class="stat-item__label">Incidentes Prevenidos</span>
+      </div>
+
+      <div class="stat-item">
+        <span class="stat-item__number" data-target="9700000" data-prefix="" data-suffix="">0</span>
+        <span class="stat-item__label">horas de operación monitoreada</span>
+      </div>
+
+      <div class="stat-item">
+        <span class="stat-item__number" data-target="480" data-prefix="" data-suffix="M">0</span>
+        <span class="stat-item__label">Kilómetros Monitoreados</span>
+      </div>
+
+      <div class="stat-item">
+        <span class="stat-item__number" data-target="4000" data-prefix="+" data-suffix="">0</span>
+        <span class="stat-item__label">Unidades Integradas</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
        SECCIÓN SMART FLEET – Seguridad, Riesgo y Control
   ════════════════════════════════════════════ -->
   <section class="smart-fleet section" id="smart-fleet">
@@ -178,68 +209,6 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
-       SECCIÓN PARTNERS – Blair Rubber + Schmidt
-  ════════════════════════════════════════════ -->
-  <section class="partners section" id="partners">
-    <div class="container">
-      <div class="partners-grid">
-
-        <!-- Blair Rubber -->
-        <div class="partner-card reveal" id="blair-rubber">
-          <!-- Reemplaza con logo real: <img src="img/blair-rubber-logo.png" alt="Blair Rubber Company" class="partner-card__logo" /> -->
-          <div class="partner-card__logo-placeholder">BLAIR<br><span>RUBBER COMPANY</span></div>
-          <h3 class="partner-card__title">Blair Rubber | Rendimiento confiable</h3>
-          <p class="partner-card__desc">Soluciones de caucho industrial que garantizan durabilidad y seguridad en tus flotas.</p>
-          <a href="#" class="btn btn--outline btn--sm">Conoce más <i class="ri-arrow-right-up-line"></i></a>
-        </div>
-
-        <!-- Schmidt -->
-        <div class="partner-card partner-card--accent reveal" id="schmidt">
-          <!-- Reemplaza con logo real: <img src="img/schmidt-logo.png" alt="Schmidt" class="partner-card__logo" /> -->
-          <div class="partner-card__logo-placeholder partner-card__logo-placeholder--blue">SCHMIDT<br><span>MAKE A LASTING MARK</span></div>
-          <h3 class="partner-card__title">Schmidt | Alta precisión</h3>
-          <p class="partner-card__desc">Equipos y tecnologías de alta precisión que mejoran el control y la eficiencia operativa.</p>
-          <a href="#" class="btn btn--outline btn--sm">Conoce más <i class="ri-arrow-right-up-line"></i></a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       SECCIÓN CLIENTES – Carrusel de logos
-  ════════════════════════════════════════════ -->
-  <section class="clientes section" id="clientes">
-    <div class="container">
-      <div class="section__header text-center">
-        <span class="section__label">NUESTROS CLIENTES <span class="label-line"></span></span>
-        <h2 class="section__title">Empresas que confían en nosotros</h2>
-      </div>
-    </div>
-
-    <div class="clientes-track-wrap">
-      <div class="clientes-track" id="clientesTrack">
-        <!-- Los logos se duplican para efecto infinito -->
-        <div class="clientes-slide"><img src="IFR/clientes/6.png"  alt="Cliente 1" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/7.png"  alt="Cliente 2" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/8.png"  alt="Cliente 3" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/9.png"  alt="Cliente 4" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/10.png" alt="Cliente 5" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/11.png" alt="Cliente 6" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/12.png" alt="Cliente 7" /></div>
-        <!-- Duplicado para loop infinito -->
-        <div class="clientes-slide"><img src="IFR/clientes/6.png"  alt="Cliente 1" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/7.png"  alt="Cliente 2" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/8.png"  alt="Cliente 3" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/9.png"  alt="Cliente 4" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/10.png" alt="Cliente 5" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/11.png" alt="Cliente 6" /></div>
-        <div class="clientes-slide"><img src="IFR/clientes/12.png" alt="Cliente 7" /></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
        MISIÓN – Texto + Video circular
   ════════════════════════════════════════════ -->
   <section class="mision section" id="mision">
@@ -275,34 +244,6 @@
             <img src="./IFR/mision-fallback.jpg" alt="Integral FR – Misión" />
           </video>
         </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       BLOQUE TECNOLOGÍA + VISITA
-  ════════════════════════════════════════════ -->
-  <section class="tech-visita section" id="tech-visita">
-    <div class="container tech-visita__inner">
-
-      <!-- Tarjeta izquierda -->
-      <div class="tech-card reveal">
-        <div class="tech-card__icon">
-          <i class="ri-shield-line"></i>
-        </div>
-        <div>
-          <h3 class="tech-card__title">Tecnología aplicada a la seguridad</h3>
-          <p class="tech-card__desc">IFR integra monitoreo, sensores y control operativo para decisiones más seguras y eficientes.</p>
-        </div>
-      </div>
-
-      <!-- Imagen derecha con botón CTA -->
-      <div class="visita-card reveal">
-        <img src="./IFR/cta-bg.jpg" alt="Programa una visita a tu operación" class="visita-card__img" />
-        <a href="#contacto" class="btn btn--hero-cta visita-card__btn">
-          Programa Una Visita A Tu Operación <i class="ri-arrow-right-up-line"></i>
-        </a>
       </div>
 
     </div>
@@ -392,6 +333,113 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
+       SECCIÓN CLIENTES – Carrusel de logos
+  ════════════════════════════════════════════ -->
+  <section class="clientes section" id="clientes">
+    <div class="container">
+      <div class="section__header text-center">
+        <span class="section__label">NUESTROS CLIENTES <span class="label-line"></span></span>
+        <h2 class="section__title">Empresas que confían en nosotros</h2>
+      </div>
+    </div>
+
+    <div class="clientes-track-wrap">
+      <div class="clientes-track" id="clientesTrack">
+        <!-- Los logos se duplican para efecto infinito -->
+        <div class="clientes-slide"><img src="IFR/clientes/6.png"  alt="Cliente 1" /></div>
+        <div class="clientes-slide"><img src="IFR/clientes/7.png"  alt="Cliente 2" /></div>
+        <div class="clientes-slide"><img src="IFR/clientes/8.png"  alt="Cliente 3" /></div>
+        <div class="clientes-slide"><img src="IFR/clientes/9.png"  alt="Cliente 4" /></div>
+        <div class="clientes-slide"><img src="IFR/clientes/10.png" alt="Cliente 5" /></div>
+        <div class="clientes-slide"><img src="IFR/clientes/11.png" alt="Cliente 6" /></div>
+        <div class="clientes-slide"><img src="IFR/clientes/12.png" alt="Cliente 7" /></div>
+        <!-- Duplicado para loop infinito -->
+        <div class="clientes-slide"><img src="IFR/clientes/6.png"  alt="Cliente 1" /></div>
+        <div class="clientes-slide"><img src="IFR/clientes/7.png"  alt="Cliente 2" /></div>
+        <div class="clientes-slide"><img src="IFR/clientes/8.png"  alt="Cliente 3" /></div>
+        <div class="clientes-slide"><img src="IFR/clientes/9.png"  alt="Cliente 4" /></div>
+        <div class="clientes-slide"><img src="IFR/clientes/10.png" alt="Cliente 5" /></div>
+        <div class="clientes-slide"><img src="IFR/clientes/11.png" alt="Cliente 6" /></div>
+        <div class="clientes-slide"><img src="IFR/clientes/12.png" alt="Cliente 7" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial section" id="testimonial">
+    <div class="container testimonial__inner">
+      <div class="testimonial__quote-mark">"</div>
+      <blockquote class="testimonial__text">
+        Desde que implementamos las soluciones de Integral FR, redujimos los incidentes en flota un <strong>43%</strong> en los primeros seis meses. La visibilidad en tiempo real transformó completamente nuestra operación.
+      </blockquote>
+      <div class="testimonial__author">
+        <div class="testimonial__author-avatar">GR</div>
+        <div>
+          <span class="testimonial__author-name">Gerente de Operaciones</span>
+          <span class="testimonial__author-company">Arca Continental</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN PARTNERS – Blair Rubber + Schmidt
+  ════════════════════════════════════════════ -->
+  <section class="partners section" id="partners">
+    <div class="container">
+      <div class="partners-grid">
+
+        <!-- Blair Rubber -->
+        <div class="partner-card reveal" id="blair-rubber">
+          <!-- Reemplaza con logo real: <img src="img/blair-rubber-logo.png" alt="Blair Rubber Company" class="partner-card__logo" /> -->
+          <div class="partner-card__logo-placeholder">BLAIR<br><span>RUBBER COMPANY</span></div>
+          <h3 class="partner-card__title">Blair Rubber | Rendimiento confiable</h3>
+          <p class="partner-card__desc">Soluciones de caucho industrial que garantizan durabilidad y seguridad en tus flotas.</p>
+          <a href="#" class="btn btn--outline btn--sm">Conoce más <i class="ri-arrow-right-up-line"></i></a>
+        </div>
+
+        <!-- Schmidt -->
+        <div class="partner-card partner-card--accent reveal" id="schmidt">
+          <!-- Reemplaza con logo real: <img src="img/schmidt-logo.png" alt="Schmidt" class="partner-card__logo" /> -->
+          <div class="partner-card__logo-placeholder partner-card__logo-placeholder--blue">SCHMIDT<br><span>MAKE A LASTING MARK</span></div>
+          <h3 class="partner-card__title">Schmidt | Alta precisión</h3>
+          <p class="partner-card__desc">Equipos y tecnologías de alta precisión que mejoran el control y la eficiencia operativa.</p>
+          <a href="#" class="btn btn--outline btn--sm">Conoce más <i class="ri-arrow-right-up-line"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       BLOQUE TECNOLOGÍA + VISITA
+  ════════════════════════════════════════════ -->
+  <section class="tech-visita section" id="tech-visita">
+    <div class="container tech-visita__inner">
+
+      <!-- Tarjeta izquierda -->
+      <div class="tech-card reveal">
+        <div class="tech-card__icon">
+          <i class="ri-shield-line"></i>
+        </div>
+        <div>
+          <h3 class="tech-card__title">Tecnología aplicada a la seguridad</h3>
+          <p class="tech-card__desc">IFR integra monitoreo, sensores y control operativo para decisiones más seguras y eficientes.</p>
+        </div>
+      </div>
+
+      <!-- Imagen derecha con botón CTA -->
+      <div class="visita-card reveal">
+        <img src="./IFR/cta-bg.jpg" alt="Programa una visita a tu operación" class="visita-card__img" />
+        <a href="#contacto" class="btn btn--hero-cta visita-card__btn">
+          Programa Una Visita A Tu Operación <i class="ri-arrow-right-up-line"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
        BANNER CTA
   ════════════════════════════════════════════ -->
   <section class="cta-banner" id="cta-banner" style="background-image: url('./IFR/nose1.jpg');">
@@ -400,35 +448,6 @@
       <p class="cta-banner__eyebrow">¿Buscas operaciones más seguras y eficientes?</p>
       <h2 class="cta-banner__title">Hablemos y conoce cómo IFR convierte<br>riesgos en oportunidades.</h2>
       <a href="#contacto" class="btn btn--hero-cta">Contáctanos <i class="ri-arrow-right-up-line"></i></a>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       ESTADÍSTICAS – Contadores animados
-  ════════════════════════════════════════════ -->
-  <section class="stats" id="stats">
-    <div class="container stats__grid">
-
-      <div class="stat-item">
-        <span class="stat-item__number" data-target="70560" data-prefix="+" data-suffix="">0</span>
-        <span class="stat-item__label">Incidentes Prevenidos</span>
-      </div>
-
-      <div class="stat-item">
-        <span class="stat-item__number" data-target="9700000" data-prefix="" data-suffix="">0</span>
-        <span class="stat-item__label">horas de operación monitoreada</span>
-      </div>
-
-      <div class="stat-item">
-        <span class="stat-item__number" data-target="480" data-prefix="" data-suffix="M">0</span>
-        <span class="stat-item__label">Kilómetros Monitoreados</span>
-      </div>
-
-      <div class="stat-item">
-        <span class="stat-item__number" data-target="4000" data-prefix="+" data-suffix="">0</span>
-        <span class="stat-item__label">Unidades Integradas</span>
-      </div>
-
     </div>
   </section>
 

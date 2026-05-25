@@ -5,16 +5,63 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ─────────────────────────────────────────────
-     NAVBAR – sticky shadow + scroll activo
+     SCROLL PROGRESS BAR
+  ───────────────────────────────────────────── */
+  const progressBar = document.getElementById('scrollProgress');
+
+  /* ─────────────────────────────────────────────
+     NAVBAR – sticky shadow
   ───────────────────────────────────────────── */
   const navbar = document.getElementById('navbar');
+  const scrollTopBtn = document.getElementById('scrollTop');
 
   const onScroll = () => {
     navbar.classList.toggle('scrolled', window.scrollY > 10);
     scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+    // Progress bar
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = (window.scrollY / total * 100) + '%';
   };
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  /* ─────────────────────────────────────────────
+     CUSTOM CURSOR
+  ───────────────────────────────────────────── */
+  const cursorDot     = document.getElementById('cursorDot');
+  const cursorOutline = document.getElementById('cursorOutline');
+
+  let mouseX = 0, mouseY = 0;
+  let outlineX = 0, outlineY = 0;
+
+  if (window.matchMedia('(pointer: fine)').matches) {
+    window.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursorDot.style.left = mouseX + 'px';
+      cursorDot.style.top  = mouseY + 'px';
+    });
+
+    // Outline con lag
+    (function animateOutline() {
+      outlineX += (mouseX - outlineX) * 0.12;
+      outlineY += (mouseY - outlineY) * 0.12;
+      cursorOutline.style.left = outlineX + 'px';
+      cursorOutline.style.top  = outlineY + 'px';
+      requestAnimationFrame(animateOutline);
+    })();
+
+    // Hover state
+    document.querySelectorAll('a, button, .product-card, .partner-card, .beneficio-item').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursorDot.classList.add('hovering');
+        cursorOutline.classList.add('hovering');
+      });
+      el.addEventListener('mouseleave', () => {
+        cursorDot.classList.remove('hovering');
+        cursorOutline.classList.remove('hovering');
+      });
+    });
+  }
 
   /* ─────────────────────────────────────────────
      HAMBURGER – menú móvil
@@ -28,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.setAttribute('aria-expanded', open);
   });
 
-  // Cerrar menú al hacer click en un enlace
   navMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('open');
@@ -37,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Dropdown en móvil (toggle al click)
   document.querySelectorAll('.has-dropdown > .dropdown-toggle').forEach(toggle => {
     toggle.addEventListener('click', (e) => {
       if (window.innerWidth <= 900) {
@@ -47,40 +92,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ─────────────────────────────────────────────
+     HERO PARALLAX
+  ───────────────────────────────────────────── */
+  const hero = document.getElementById('hero');
+  if (hero) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      if (scrolled < window.innerHeight) {
+        hero.style.backgroundPositionY = `calc(50% + ${scrolled * 0.35}px)`;
+      }
+    }, { passive: true });
+  }
 
   /* ─────────────────────────────────────────────
-     REVEAL ON SCROLL – Intersection Observer
+     REVEAL ON SCROLL
   ───────────────────────────────────────────── */
   const revealEls = document.querySelectorAll('.reveal');
 
   const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Stagger: cada tarjeta aparece con un pequeño retraso
-        const delay = entry.target.closest('.products-grid, .partners-grid')
+        const delay = entry.target.closest('.products-grid, .partners-grid, .beneficios__grid')
           ? [...entry.target.parentElement.children].indexOf(entry.target) * 100
           : 0;
         setTimeout(() => entry.target.classList.add('visible'), delay);
         revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.12 });
 
   revealEls.forEach(el => revealObserver.observe(el));
-
 
   /* ─────────────────────────────────────────────
      SCROLL TOP
   ───────────────────────────────────────────── */
-  const scrollTopBtn = document.getElementById('scrollTop');
-
   scrollTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-
   /* ─────────────────────────────────────────────
-     ACTIVE NAV LINK por sección visible
+     ACTIVE NAV LINK
   ───────────────────────────────────────────── */
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.navbar__links a');
@@ -100,14 +152,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sections.forEach(s => sectionObserver.observe(s));
 
-
   /* ─────────────────────────────────────────────
-     CONTADORES ANIMADOS – Stats section
+     CONTADORES ANIMADOS
   ───────────────────────────────────────────── */
   const statNumbers = document.querySelectorAll('.stat-item__number');
 
   function formatNumber(n) {
-    if (n >= 1000000) return (n / 1000000).toLocaleString('es-MX', { maximumFractionDigits: 1 }) + ',000,000';
+    if (n >= 1000000) {
+      return (n / 1000000).toLocaleString('es-MX', { maximumFractionDigits: 1 }) + ',000,000';
+    }
     return n.toLocaleString('es-MX');
   }
 
@@ -123,12 +176,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function step(now) {
       const elapsed  = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      // Easing ease-out
       const eased    = 1 - Math.pow(1 - progress, 3);
       const current  = Math.round(eased * target);
-
       el.textContent = prefix + formatNumber(current) + suffix;
-
       if (progress < 1) requestAnimationFrame(step);
       else el.textContent = prefix + formatNumber(target) + suffix;
     }
@@ -140,9 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const nums = entry.target.querySelectorAll('.stat-item__number');
-        nums.forEach((el, i) => {
-          setTimeout(() => animateCounter(el), i * 150);
-        });
+        nums.forEach((el, i) => setTimeout(() => animateCounter(el), i * 150));
         statsObserver.unobserve(entry.target);
       }
     });
