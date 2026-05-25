@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Integral FR – Tecnología inteligente para prevenir riesgos</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Remixicon para íconos -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       TOP BAR – redes sociales + contacto
+  ════════════════════════════════════════════ -->
+  <div class="top-bar">
+    <div class="container top-bar__inner">
+      <!-- Redes sociales -->
+      <ul class="top-bar__social">
+        <li><a href="#" aria-label="YouTube"><i class="ri-youtube-line"></i> YouTube</a></li>
+        <li><a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i> Instagram</a></li>
+        <li><a href="#" aria-label="Facebook"><i class="ri-facebook-line"></i> Facebook</a></li>
+        <li><a href="#" aria-label="LinkedIn"><i class="ri-linkedin-line"></i> LinkedIn</a></li>
+        <li><a href="#" aria-label="Reddit"><i class="ri-reddit-line"></i> Reddit</a></li>
+      </ul>
+      <!-- Contacto rápido -->
+      <ul class="top-bar__contact">
+        <li><a href="mailto:info@integralfr.com.mx"><i class="ri-mail-line"></i> info@integralfr.com.mx</a></li>
+        <li><a href="#"><i class="ri-map-pin-line"></i> Integral FR</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR PRINCIPAL
+  ════════════════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="navbar__logo">
+        <!-- Reemplaza con tu imagen: <img src="img/logo.png" alt="Integral FR" /> -->
+        <div class="logo-placeholder">
+          <span class="logo-placeholder__fr">FR</span>
+          <span class="logo-placeholder__text">INTEGRAL</span>
+        </div>
+      </a>
+
+      <!-- Menú principal (desktop) -->
+      <nav class="navbar__menu" id="navMenu" role="navigation" aria-label="Menú principal">
+        <ul class="navbar__links">
+          <li><a href="#smart-sense">Smart Sense</a></li>
+          <li><a href="#smart-tire">Smart Tire</a></li>
+          <li><a href="#smart-vision">Smart Vision</a></li>
+          <li><a href="#smart-driver">Smart Driver</a></li>
+          <li><a href="#blair-rubber">Blair Rubber</a></li>
+          <!-- Dropdown Schmidt -->
+          <li class="has-dropdown">
+            <a href="#schmidt" class="dropdown-toggle">
+              SCHMIDT® <i class="ri-arrow-down-s-line"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Schmidt Productos</a></li>
+              <li><a href="#">Schmidt Servicios</a></li>
+            </ul>
+          </li>
+          <li><a href="#blog">Blog</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA + hamburguesa -->
+      <div class="navbar__actions">
+        <a href="#contacto" class="btn btn--dark">Contáctanos <i class="ri-arrow-right-up-line"></i></a>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       HERO – Slider
+  ════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__slider" id="heroSlider">
+
+      <!-- Slide 1 -->
+      <div class="hero__slide active" style="background-image: url('img/hero-1.jpg');">
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+          <p class="hero__eyebrow">Tecnología inteligente para prevenir riesgos</p>
+          <h1 class="hero__title">Monitoreo, Alertas Y Análisis En Tiempo Real<br>Para Una Operación Segura Y Eficiente</h1>
+          <div class="hero__products">
+            <a href="#smart-tire" class="hero__product-link">
+              <i class="ri-steering-2-line"></i> Smart <strong>Tires</strong>
+            </a>
+            <a href="#smart-vision" class="hero__product-link">
+              <i class="ri-eye-line"></i> Smart <strong>Vision</strong>
+            </a>
+            <a href="#smart-sense" class="hero__product-link">
+              <i class="ri-radio-line"></i> Smart <strong>Sense</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 (agrega más slides aquí) -->
+      <div class="hero__slide" style="background-image: url('img/hero-2.jpg');">
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+          <p class="hero__eyebrow">Tecnología inteligente para prevenir riesgos</p>
+          <h1 class="hero__title">Soluciones Inteligentes Para<br>La Gestión De Tu Flota</h1>
+          <div class="hero__products">
+            <a href="#smart-driver" class="hero__product-link">
+              <i class="ri-user-line"></i> Smart <strong>Driver</strong>
+            </a>
+            <a href="#blair-rubber" class="hero__product-link">
+              <i class="ri-shield-check-line"></i> Blair <strong>Rubber</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controles slider -->
+    <button class="hero__arrow hero__arrow--prev" id="heroPrev" aria-label="Anterior">
+      <i class="ri-arrow-left-s-line"></i>
+    </button>
+    <button class="hero__arrow hero__arrow--next" id="heroNext" aria-label="Siguiente">
+      <i class="ri-arrow-right-s-line"></i>
+    </button>
+
+    <!-- Dots -->
+    <div class="hero__dots" id="heroDots"></div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN SMART FLEET – Seguridad, Riesgo y Control
+  ════════════════════════════════════════════ -->
+  <section class="smart-fleet section" id="smart-fleet">
+    <div class="container">
+
+      <!-- Encabezado -->
+      <div class="section__header text-center">
+        <span class="section__label">SMART FLEET <span class="label-line"></span></span>
+        <h2 class="section__title">Seguridad, Riesgo y Control</h2>
+        <div class="section__watermark" aria-hidden="true">Smart</div>
+      </div>
+
+      <!-- Cards de productos Smart -->
+      <div class="products-grid" id="smart-sense">
+
+        <!-- Smart Sense -->
+        <div class="product-card reveal">
+          <h3 class="product-card__brand">
+            Smart <span class="brand-icon brand-icon--sense"><i class="ri-radio-line"></i></span> Sense
+          </h3>
+          <p class="product-card__subtitle">Smart Sense | Alertas críticas</p>
+          <p class="product-card__desc">Alertas críticas basadas en sensores inteligentes, anticipando problemas y protegiendo activos y personal.</p>
+          <a href="#" class="btn btn--dark btn--sm">Conoce más <i class="ri-arrow-right-up-line"></i></a>
+        </div>
+
+        <!-- Smart Vision -->
+        <div class="product-card reveal" id="smart-vision">
+          <h3 class="product-card__brand">
+            Smart <span class="brand-icon brand-icon--vision"><i class="ri-eye-line"></i></span> Vision
+          </h3>
+          <p class="product-card__subtitle">Smart Vision | Seguridad visual</p>
+          <p class="product-card__desc">Seguridad visual que monitorea tu operación en tiempo real, detectando riesgos antes de que ocurran.</p>
+          <a href="#" class="btn btn--dark btn--sm">Conoce más <i class="ri-arrow-right-up-line"></i></a>
+        </div>
+
+        <!-- Smart Tires -->
+        <div class="product-card reveal" id="smart-tire">
+          <h3 class="product-card__brand">
+            Smart <span class="brand-icon brand-icon--tire"><i class="ri-steering-2-line"></i></span> Tires
+          </h3>
+          <p class="product-card__subtitle">Smart Tire | Distancia segura</p>
+          <p class="product-card__desc">Distancia segura y control de neumáticos, optimizando el rendimiento en ruta y reduciendo riesgos operativos.</p>
+          <a href="#" class="btn btn--dark btn--sm">Conoce más <i class="ri-arrow-right-up-line"></i></a>
+        </div>
+
+        <!-- Smart Driver -->
+        <div class="product-card reveal" id="smart-driver">
+          <h3 class="product-card__brand">
+            Smart <span class="brand-icon brand-icon--driver"><i class="ri-user-line"></i></span> Driver
+          </h3>
+          <p class="product-card__subtitle">Smart Driver | Conductor inteligente</p>
+          <p class="product-card__desc">Monitoreo del comportamiento del conductor en tiempo real para mejorar la seguridad y eficiencia en cada viaje.</p>
+          <a href="#" class="btn btn--dark btn--sm">Conoce más <i class="ri-arrow-right-up-line"></i></a>
+        </div>
+
+      </div>
+
+      <p class="smart-fleet__tagline">Ayudamos a monitorear, prevenir y optimizar cada operación de tu empresa.</p>
+    </div>
+
+    <!-- Círculo decorativo -->
+    <div class="deco-circle deco-circle--left" aria-hidden="true"></div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN PARTNERS – Blair Rubber + Schmidt
+  ════════════════════════════════════════════ -->
+  <section class="partners section" id="partners">
+    <div class="container">
+      <div class="partners-grid">
+
+        <!-- Blair Rubber -->
+        <div class="partner-card reveal" id="blair-rubber">
+          <!-- Reemplaza con logo real: <img src="img/blair-rubber-logo.png" alt="Blair Rubber Company" class="partner-card__logo" /> -->
+          <div class="partner-card__logo-placeholder">BLAIR<br><span>RUBBER COMPANY</span></div>
+          <h3 class="partner-card__title">Blair Rubber | Rendimiento confiable</h3>
+          <p class="partner-card__desc">Soluciones de caucho industrial que garantizan durabilidad y seguridad en tus flotas.</p>
+          <a href="#" class="btn btn--outline btn--sm">Conoce más <i class="ri-arrow-right-up-line"></i></a>
+        </div>
+
+        <!-- Schmidt -->
+        <div class="partner-card partner-card--accent reveal" id="schmidt">
+          <!-- Reemplaza con logo real: <img src="img/schmidt-logo.png" alt="Schmidt" class="partner-card__logo" /> -->
+          <div class="partner-card__logo-placeholder partner-card__logo-placeholder--blue">SCHMIDT<br><span>MAKE A LASTING MARK</span></div>
+          <h3 class="partner-card__title">Schmidt | Alta precisión</h3>
+          <p class="partner-card__desc">Equipos y tecnologías de alta precisión que mejoran el control y la eficiencia operativa.</p>
+          <a href="#" class="btn btn--outline btn--sm">Conoce más <i class="ri-arrow-right-up-line"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════ -->
+  <footer class="footer" id="contacto">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <!-- Reemplaza con logo: <img src="img/logo-white.png" alt="Integral FR" /> -->
+        <div class="logo-placeholder logo-placeholder--white">
+          <span class="logo-placeholder__fr">FR</span>
+          <span class="logo-placeholder__text">INTEGRAL</span>
+        </div>
+        <p>Tecnología inteligente para prevenir riesgos y optimizar operaciones.</p>
+        <ul class="footer__social">
+          <li><a href="#" aria-label="YouTube"><i class="ri-youtube-line"></i></a></li>
+          <li><a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a></li>
+          <li><a href="#" aria-label="Facebook"><i class="ri-facebook-line"></i></a></li>
+          <li><a href="#" aria-label="LinkedIn"><i class="ri-linkedin-line"></i></a></li>
+          <li><a href="#" aria-label="Reddit"><i class="ri-reddit-line"></i></a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Productos</h4>
+        <ul>
+          <li><a href="#smart-sense">Smart Sense</a></li>
+          <li><a href="#smart-tire">Smart Tire</a></li>
+          <li><a href="#smart-vision">Smart Vision</a></li>
+          <li><a href="#smart-driver">Smart Driver</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Marcas</h4>
+        <ul>
+          <li><a href="#blair-rubber">Blair Rubber</a></li>
+          <li><a href="#schmidt">SCHMIDT®</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:info@integralfr.com.mx"><i class="ri-mail-line"></i> info@integralfr.com.mx</a></li>
+          <li><a href="#blog"><i class="ri-article-line"></i> Blog</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2025 Integral FR. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón scroll top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
