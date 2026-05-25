@@ -69,7 +69,7 @@
 
       <!-- CTA + hamburguesa -->
       <div class="navbar__actions">
-        <a href="#contacto" class="btn btn--dark">Contáctanos <i class="ri-arrow-right-up-line"></i></a>
+        <a href="contacto.html" class="btn btn--dark">Contáctanos <i class="ri-arrow-right-up-line"></i></a>
         <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -434,7 +434,7 @@
       <!-- Imagen derecha con botón CTA -->
       <div class="visita-card reveal">
         <img src="./IFR/cta-bg.jpg" alt="Programa una visita a tu operación" class="visita-card__img" />
-        <a href="#contacto" class="btn btn--hero-cta visita-card__btn">
+        <a href="contacto.html" class="btn btn--hero-cta visita-card__btn">
           Programa Una Visita A Tu Operación <i class="ri-arrow-right-up-line"></i>
         </a>
       </div>
@@ -450,7 +450,7 @@
     <div class="cta-banner__content">
       <p class="cta-banner__eyebrow">¿Buscas operaciones más seguras y eficientes?</p>
       <h2 class="cta-banner__title">Hablemos y conoce cómo IFR convierte<br>riesgos en oportunidades.</h2>
-      <a href="#contacto" class="btn btn--hero-cta">Contáctanos <i class="ri-arrow-right-up-line"></i></a>
+      <a href="contacto.html" class="btn btn--hero-cta">Contáctanos <i class="ri-arrow-right-up-line"></i></a>
     </div>
   </section>
 
@@ -510,140 +510,7 @@
         </div>
         <div class="llamada-banner__divider"></div>
         <p class="llamada-banner__text">Los riesgos no esperan.<br><strong>Agenda una consulta ahora.</strong></p>
-        <a href="#contacto" class="btn btn--hero-cta llamada-banner__btn">Agendar <i class="ri-arrow-right-up-line"></i></a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       CONTACTO
-  ════════════════════════════════════════════ -->
-  <section class="contacto section reveal" id="contacto">
-    <div class="container contacto__inner">
-
-      <!-- Columna izquierda: info -->
-      <div class="contacto__info">
-        <span class="section__label">CONTÁCTANOS <span class="label-line"></span></span>
-        <h2 class="contacto__title">Estamos disponibles<br>cuando necesites apoyo.</h2>
-        <p class="contacto__desc">Ecosistema integral de soluciones: módulos especializados, alta capacidad de personalización, implementación flexible y resultados inmediatos.</p>
-
-        <ul class="contacto__datos">
-          <li class="contacto__dato">
-            <span class="contacto__dato-icon"><i class="ri-phone-line"></i></span>
-            <div>
-              <span class="contacto__dato-label">Llámanos</span>
-              <a href="tel:+528138596312" class="contacto__dato-value">(+52) 81 3859 6312</a>
-            </div>
-          </li>
-          <li class="contacto__dato">
-            <span class="contacto__dato-icon"><i class="ri-mail-send-line"></i></span>
-            <div>
-              <span class="contacto__dato-label">Pide una cotización</span>
-              <a href="mailto:info@integralfr.com.mx" class="contacto__dato-value">info@integralfr.com.mx</a>
-            </div>
-          </li>
-          <li class="contacto__dato">
-            <span class="contacto__dato-icon"><i class="ri-map-pin-2-line"></i></span>
-            <div>
-              <span class="contacto__dato-label">Visítanos</span>
-              <span class="contacto__dato-value">Coahuila 302 Sur, Las Encinas,<br>66470 Cdad. Gral. Escobedo, N.L.</span>
-            </div>
-          </li>
-        </ul>
-
-        <div class="contacto__badge">
-          <i class="ri-time-line"></i>
-          Respondemos en menos de <strong>24 horas</strong>
-        </div>
-      </div>
-
-      <!-- Columna derecha: formulario -->
-      <div class="contacto__form-wrap">
-        <h3 class="contacto__form-title">Envíanos un mensaje</h3>
-
-        <form class="contacto__form" onsubmit="return false;">
-
-          <!-- Fila 1 -->
-          <div class="form-row">
-            <div class="form-field">
-              <input type="text" placeholder="Nombre *" required />
-            </div>
-            <div class="form-field">
-              <input type="text" placeholder="Empresa *" required />
-            </div>
-          </div>
-
-          <!-- Fila 2 -->
-          <div class="form-row">
-            <div class="form-field">
-              <input type="tel" placeholder="Teléfono *" required />
-            </div>
-            <div class="form-field">
-              <input type="email" placeholder="Correo electrónico *" required />
-            </div>
-          </div>
-
-          <!-- Fila 3 -->
-          <div class="form-row">
-            <div class="form-field">
-              <input type="text" placeholder="Cargo (Ej. Gerente de Operaciones)" />
-            </div>
-            <div class="form-field">
-              <select>
-                <option value="" disabled selected>Número de unidades en flota</option>
-                <option>1 – 10 unidades</option>
-                <option>11 – 50 unidades</option>
-                <option>51 – 200 unidades</option>
-                <option>Más de 200 unidades</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Producto de interés -->
-          <div class="form-field form-field--full">
-            <p class="form-chips-label">Producto de interés</p>
-            <div class="form-chips">
-              <label class="form-chip">
-                <input type="checkbox" name="producto" value="smart-vision" />
-                <span><i class="ri-camera-line"></i> Smart Vision</span>
-              </label>
-              <label class="form-chip">
-                <input type="checkbox" name="producto" value="smart-driver" />
-                <span><i class="ri-steering-2-line"></i> Smart Driver</span>
-              </label>
-              <label class="form-chip">
-                <input type="checkbox" name="producto" value="smart-sense" />
-                <span><i class="ri-sensor-line"></i> Smart Sense</span>
-              </label>
-              <label class="form-chip">
-                <input type="checkbox" name="producto" value="smart-tire" />
-                <span><i class="ri-tire-line"></i> Smart Tire</span>
-              </label>
-              <label class="form-chip">
-                <input type="checkbox" name="producto" value="no-se" />
-                <span><i class="ri-question-line"></i> No sé aún</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- Mensaje -->
-          <div class="form-field form-field--full">
-            <textarea placeholder="¿En qué podemos ayudarte? Cuéntanos sobre tu operación..." rows="4"></textarea>
-          </div>
-
-          <!-- Submit -->
-          <div class="form-submit">
-            <button type="submit" class="btn btn--dark btn--submit">
-              Solicitar cotización gratuita <i class="ri-arrow-right-up-line"></i>
-            </button>
-            <p class="form-trust">
-              <i class="ri-shield-check-line"></i>
-              Sin compromiso · Tu información es confidencial
-            </p>
-          </div>
-
-        </form>
+        <a href="contacto.html" class="btn btn--hero-cta llamada-banner__btn">Agendar <i class="ri-arrow-right-up-line"></i></a>
       </div>
 
     </div>
