@@ -1625,7 +1625,6 @@ ul { list-style: none; }
    ═══════════════════════════════════════════════ */
 @media (max-width: 640px) {
   .section-header__title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
-  .section { padding: 60px 0; }
 }
 
 /* ═══════════════════════════════════════════════
@@ -2085,3 +2084,42 @@ body {
 .beneficios__grid .reveal:nth-child(3) { transition-delay: 160ms; }
 .beneficios__grid .reveal:nth-child(4) { transition-delay: 240ms; }
 .beneficios__grid .reveal:nth-child(5) { transition-delay: 320ms; }
+
+/* ═══════════════════════════════════════════════
+   MOBILE PHONE OPTIMIZATIONS
+   ═══════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+
+  .container { padding-inline: 20px; }
+
+  /* Navbar */
+  .navbar__logo img { height: 52px; }
+
+  /* Hide decorative watermark — it's 80px+ font and white-space:nowrap */
+  .section__watermark { display: none; }
+
+  /* Sections */
+  .section { padding-block: 48px; }
+
+  /* Beneficios icons */
+  .beneficio-item__icon { width: 68px; height: 68px; }
+  .beneficio-item__icon svg { width: 36px; height: 36px; }
+
+  /* Testimonial quote mark */
+  .testimonial__quote-mark { font-size: 4rem; }
+
+  /* Partner row cards */
+  .partner-card { padding: 24px 20px; }
+  .tech-card    { padding: 24px 20px; }
+  .visita-card  { padding: 24px 20px; }
+}
+
+@media (max-width: 480px) {
+  .container { padding-inline: 16px; }
+
+  .navbar__logo img { height: 44px; }
+
+  /* Video circle (900px breakpoint sets 70vw; fine for 480px too) */
+  .mision__video-circle { width: clamp(200px, 80vw, 320px); }
+}
